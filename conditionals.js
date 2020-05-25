@@ -24,3 +24,10 @@ if (temperature < 0) {
   console.log("Short sleeves are fine.");
 }
 console.log("Now You're ready to go outsidse!");
+
+const is isCitizen = true;
+const age = 26;
+
+if(isCitizen && age > 18) {
+  console.log("You are eligible to vote.");
+}
