@@ -14,20 +14,27 @@ console.log("Now you're ready to go outside!");
 
 // lets do better than the above...
 
-const temperature = 22;
+const temperature = -42;
 
-if (temperature < 0) {
+
+if (temperature < -40 || temperature > 40) {
+  console.log("Probably shouldn't go outside today!");
+} 
+else if (temperature < 0) {
   console.log("Make sure you pick out a scarf");
-} else if (temperature < 15) {
+} 
+else if (temperature < 15) {
   console.log("Short sleeves won't cut it!");
-} else {
+}
+else {
   console.log("Short sleeves are fine.");
 }
 console.log("Now You're ready to go outsidse!");
 
-const is isCitizen = true;
+const isCitizen = true;
 const age = 26;
 
 if(isCitizen && age > 18) {
   console.log("You are eligible to vote.");
 }
+
