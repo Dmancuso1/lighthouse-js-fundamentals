@@ -80,3 +80,28 @@ sports(function displayFavoriteSport(sportName){
 }, "Golf");
 
 // test comment for git
+
+
+
+// Voting Station Calculation - Assignment
+const stations = [
+  ['Big Bear Donair', 10, 'restaurant'],
+  ['Bright Lights Elementary', 50, 'school'],
+  ['Moose Mountain Community Centre', 45, 'community centre']
+];
+
+
+const chooseStations = function(stations) {
+  const goodStations = [];
+  for (const station of stations){
+    const name = station[0];
+    const capacity = station[1];
+    const place = station[2];
+    if (((place === "school") || (place === "community centre")) && (capacity >= 20)) {
+      goodStations.push(name);
+    }
+  }
+  return goodStations;
+}
+chooseStations(stations);
+// console.log(chooseStations(stations))
