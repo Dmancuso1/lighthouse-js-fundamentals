@@ -84,6 +84,7 @@ sports(function displayFavoriteSport(sportName){
 
 
 // Voting Station Calculation - Assignment
+// good stations are either schools or community centres that have 20 or more capacity
 const stations = [
   ['Big Bear Donair', 10, 'restaurant'],
   ['Bright Lights Elementary', 50, 'school'],
@@ -91,9 +92,9 @@ const stations = [
 ];
 
 
-const chooseStations = function(stations) {
+const chooseStations = function(myStations) {
   const goodStations = [];
-  for (const station of stations){
+  for (const station of myStations){
     const name = station[0];
     const capacity = station[1];
     const place = station[2];
@@ -103,5 +104,5 @@ const chooseStations = function(stations) {
   }
   return goodStations;
 }
-chooseStations(stations);
-// console.log(chooseStations(stations))
+// chooseStations(stations);
+console.log(chooseStations(stations))
