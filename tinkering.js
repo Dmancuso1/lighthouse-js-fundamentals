@@ -106,3 +106,160 @@ const chooseStations = function(myStations) {
 }
 // chooseStations(stations);
 console.log(chooseStations(stations))
+
+
+
+
+
+// fun with splicing...
+// more info:
+/*
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+*/
+var donuts = ["glazed", "chocolate frosted", "Boston creme", "glazed cruller"];
+console.log(donuts.splice(-3, 0, "hehehe")); 
+console.log(donuts);
+
+
+// Array INLINE FUNCTION with FOR EACH  (can be used instead of for..loop)
+let donutz = ['jelly donut', 'chocolate donut', 'glazed donut'];
+
+donutz.forEach(function(donut) {
+  donut += " hole";
+  donut = donut.toUpperCase()
+  console.log(donut);
+});
+
+/* prints:
+JELLY DONUT HOLE
+CHOCOLATE DONUT HOLE
+GLAZED DONUT HOLE
+*/
+
+
+
+//another FOR EACH EXAMPLE (INLINE)
+words = ["cat", "in", "hat"];
+words.forEach(function(word, num, all) {
+  console.log("Word " + num + " in " + all.toString() + " is " + word);
+});
+/*
+Prints:
+Word 0 in cat,in,hat is cat
+Word 1 in cat,in,hat is in
+Word 2 in cat,in,hat is hat
+*/
+/*
+Parameters
+The function that you pass to the forEach() method can take up to three parameters. In the video, these are called element, index, and array, but you can call them whatever you like.
+
+The forEach() method will call this function once for each element in the array (hence the name forEach.) Each time, it will call the function with different arguments. The element parameter will get the value of the array element. The index parameter will get the index of the element (starting with zero). The array parameter will get a reference to the whole array, which is handy if you want to modify the elements.
+*/
+
+
+
+
+
+
+/*
+ * Programming Quiz: Another Type of Loop (6-8)
+ * QUIZ REQUIREMENTS
+ * Use the existing `test` variable and write a `forEach` loop
+ * that adds 100 to each number that is divisible by 3.
+ *
+ * Things to note:
+ *  - Inside the loop, you must use an `if` statement to verify code is divisible by 3
+ *  - Inside the loop, you can updade an element ONLY by using the arrayName[index]
+ *  - Outside the loop, you can use `console.log` to verify the `test` variable 
+ */
+
+var test = [12, 929, 11, 3, 199, 1000, 7, 1, 24, 37, 4,
+  19, 300, 3775, 299, 36, 209, 148, 169, 299,
+  6, 109, 20, 58, 139, 59, 3, 1, 139
+];
+
+// Write your code here
+test.forEach(function(element,index) {
+  if (element % 3 === 0) {
+        // The commented statements below would not be able to change the value of item
+        // because the `item` is a COPY of actual element, while actual is test[index]
+        // item = item + 100;
+        // console.log("The updated element is "+item+" and actual is "+test[index]);
+    test[index] += 100;
+  }
+});
+console.log(test);
+
+
+
+
+
+
+
+
+
+
+// MAP   =>     map()
+let tims = ['jelly', 'chocolate glazed', 'plain glazed'];
+
+// lets create a NEW array using existing array 'tims' utilizing the map() method!!!
+var betterTims = tims.map(function(donut) {
+  donut += ' donut';
+  donut = donut.toUpperCase();
+  return donut;
+});
+console.log(tims)
+console.log(betterTims);
+
+
+/*
+ * Programming Quiz: I Got Bills (6-9)
+ *
+ * Use the .map() method to take the bills array below and create a second array
+ * of numbers called totals. The totals array should contains each amount from the
+ * bills array but with a 15% tip added. Log the totals array to the console.
+ *
+ * For example, the first two entries in the totals array would be:
+ *
+ * [57.76, 21.99, ... ]
+ *
+ * Things to note:
+ *  - each entry in the totals array must be a number
+ *  - each number must have an accuracy of two decimal points
+ */
+ 
+ /*
+ * QUIZ REQUIREMENTS
+ * - Your code should have the variables `bills` and `totals`
+ * - Your `bills` array should call the `map()` method and store the return of `map()` in the `totals` array
+ * - Your `totals` array should be an array of numbers
+ * - Your code should print the `totals` array to the console
+ * - The output must be as described above. 
+ */
+var bills = [50.23, 19.12, 34.01,
+  100.11, 12.15, 9.90, 29.11, 12.99,
+  10.00, 99.22, 102.20, 100.10, 6.77, 2.22
+];
+var totals = bills.map(function(addTax) {
+  addTax *=1.15;
+  return Number(addTax.toFixed(2));
+});
+console.log(totals);
+
+
+
+
+
+
+// 2 dimensional array ... example .. using two for loops...
+var donutBox = [
+  ["glazed", "chocolate glazed", "cinnamon"],
+  ["powdered", "sprinkled", "glazed cruller"],
+  ["chocolate cruller", "Boston creme", "creme de leche", "heheh"]
+];
+
+for (let row = 0; row < donutBox.length; row++) {
+  for (let col = 0; col < donutBox[row].length; col++) {
+    console.log(donutBox[row][col]);
+  }
+}
